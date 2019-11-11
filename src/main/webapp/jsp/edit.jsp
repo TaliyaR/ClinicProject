@@ -7,23 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%--<html>--%>
-<%--<head>--%>
-    <%--<title>Edit</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<form method="post" action="/edit">--%>
-    <input type="text" name="firstName" placeholder="First Name">
-    <input type="text" name="lastName" placeholder="Last Name">
-    <input type="date" name="birthDate">
-    <input type="email" name="email" placeholder="Email">
-    <input type="text" name="phone" placeholder="Phone">
-    <input type="radio" name="sex" value="1"> Male <input type="radio" name="sex" value="0"> Female<br>
-    <input type="submit" value="Save">
-<%--</form>--%>
-<%--</body>--%>
-<%--</html>--%>
-<%--</html>--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,7 +85,7 @@
 
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        Username <c: out value = '${req.getParameter("email")}'/>
+                        ${firstName} ${lastName}
                     </div>
                 </div>
 
@@ -139,56 +122,48 @@
                 <div class="container">
                     <!-- edit form column -->
                     <div class="col-md-9 personal-info">
-                        <div class="alert alert-info alert-dismissable">
-                            <a class="panel-close close" data-dismiss="alert">×</a>
-                            <i class="fa fa-coffee"></i>
-                            This is an <strong>.alert</strong>. Use this to show important messages to the user.
-                        </div>
+                        <%--<div class="alert alert-info alert-dismissable">--%>
+                            <%--<a class="panel-close close" data-dismiss="alert">×</a>--%>
+                            <%--<i class="fa fa-coffee"></i>--%>
+                            <%--This is an <strong>.alert</strong>. Use this to show important messages to the user.--%>
+                        <%--</div>--%>
                         <h3> Персональные данные</h3>
 
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form" action="/edit" method="post">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Имя</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="firstName" value="***">
+                                    <input class="form-control" type="text" name="firstName" value="${firstName}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Фамилия</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="lastName" value="***">
+                                    <input class="form-control" type="text" name="lastName" value="${lastName}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Дата Рождения</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="date" name="birthDate" value="">
+                                    <input class="form-control" type="date" name="birthDate" value="${birthDate}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Email:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="email" name="email" value="***">
+                                    <input class="form-control" type="email" name="email" value="${email}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Телефон</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="phone" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Пол</label>
-                                <div class="col-lg-8">
-                                    <input type="radio" name="sex" value="1">Male
-                                    <input type="radio" name="sex" value="0">Female<br>
+                                    <input class="form-control" type="text" name="phone" value="${phone}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label"></label>
                                 <div class="col-md-8">
-                                    <input type="button" class="btn btn-success" value="Сохранить">
-                                    <span></span>
+                                    <input type="submit" class="btn btn-success" value="Сохранить">
                                     <input type="reset" class="btn btn-danger" value="Закрыть">
                                 </div>
                             </div>

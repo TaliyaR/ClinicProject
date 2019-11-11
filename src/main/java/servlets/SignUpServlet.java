@@ -1,6 +1,7 @@
 package servlets;
 
 import models.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import services.UserService;
 
 import javax.servlet.ServletException;
@@ -22,14 +23,15 @@ public class SignUpServlet extends HttpServlet {
         String birthDate = request.getParameter("birthDate");
 
         Date date = Date.valueOf(birthDate);
-
-        User newUser = new User(firstName, lastName, email, phone, password,date);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        password = encoder.encode(password);
+        User newUser = new User(firstName, lastName, email, phone, password, date);
         userService.signUp(newUser);
         response.sendRedirect("/login");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/jsp/signup.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/signup.jsp").forward(request, response);
 
     }
 }

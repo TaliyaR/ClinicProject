@@ -23,9 +23,10 @@ public class UserDAO {
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             if(resultSet.next()) {
-                return new User(resultSet.getString("first_name"), resultSet.getString("last_name"),
-                        resultSet.getString("email"), resultSet.getString("phone"),
-                        resultSet.getString("password"), resultSet.getDate("birth_date"));
+                return new User(resultSet.getInt("user_id"),resultSet.getString("first_name"),
+                        resultSet.getString("last_name"), resultSet.getString("email"),
+                        resultSet.getString("phone"), resultSet.getString("password"),
+                        resultSet.getDate("birth_date"));
             }
         }catch (SQLException e){
             throw new IllegalArgumentException();
@@ -42,7 +43,6 @@ public class UserDAO {
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getPhone());
             statement.setString(5, user.getPassword());
-//            statement.setString(6, "2000-06-03");
             statement.setDate(6, (java.sql.Date)user.getBirthDate());
 
             int row = statement.executeUpdate();
@@ -52,6 +52,23 @@ public class UserDAO {
         } catch (SQLException e) {
             throw new IllegalArgumentException();
         }
+    }
+
+    public void updateUser(Integer id, String firstName, String lastName, String email, String phone, Date birthDate){
+        try {
+            PreparedStatement statement = connection.prepareStatement("UPDATE project_schema.user SET first_name = ?, " +
+                    "last_name = ?, email = ?, phone = ?, birth_date = ? WHERE user_id = ?");
+            statement.setString(1, firstName);
+            statement.setString(2, lastName);
+            statement.setString(3, email);
+            statement.setString(4, phone);
+            statement.setDate(5, birthDate);
+            statement.setInt(6, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new IllegalArgumentException();
+        }
+
     }
 
 

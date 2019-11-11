@@ -16,7 +16,7 @@
         <servlet-name>SignUpServlet</servlet-name>
         <servlet-class>servlets.SignUpServlet</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
         <url-pattern>/signup</url-pattern>
@@ -39,5 +39,44 @@
         <servlet-name>EditServlet</servlet-name>
         <url-pattern>/edit</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlets.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EnrollsServlet</servlet-name>
+        <servlet-class>servlets.EnrollsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnrollsServlet</servlet-name>
+        <url-pattern>/enroll</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DoctorsServlet</servlet-name>
+        <servlet-class>servlets.DoctorsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DoctorsServlet</servlet-name>
+        <url-pattern>/doctors</url-pattern>
+    </servlet-mapping>
+
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/home</url-pattern>
+        <url-pattern>/edit</url-pattern>
+        <url-pattern>/doctors</url-pattern>
+        <url-pattern>/enroll</url-pattern>
+    </filter-mapping>
 
 </web-app>

@@ -1,19 +1,37 @@
 package models;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
 
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
     private String password;
-//    private String birthDate;
     private Date birthDate;
+
+    public User(int id, String firstName, String lastName, String email, String phone, String password, Date birthDate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.birthDate = birthDate;
+    }
+
+    public User(int id, String firstName, String lastName, String email, String phone, Date birthDate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.birthDate = birthDate;
+    }
 
     public User(String firstName, String lastName, String email, String phone, String password, Date birthDate) {
         this.firstName = firstName;
@@ -21,8 +39,11 @@ public class User implements Serializable {
         this.email = email;
         this.phone = phone;
         this.password = password;
-//        this.birthDate = birthDate;
         this.birthDate = birthDate;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -65,14 +86,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-//    public String getBirthDate() {
-//        return birthDate;
-//    }
-//
-//    public void setBirthDate(String birthDate) {
-//        this.birthDate = birthDate;
-//    }
-
     public Date getBirthDate() {
         return birthDate;
     }
@@ -80,5 +93,6 @@ public class User implements Serializable {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
 }
 
