@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -7,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MedClinic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content=""/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
@@ -24,7 +23,11 @@
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="../../resources/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../resources/css/owl.theme.default.min.css">
-
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="../../resources/css/flexslider.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="../../resources/fonts/flaticon/font/flaticon.css">
+    <!-- Theme style  -->
     <link rel="stylesheet" href="../../resources/css/style.css">
 
     <!-- Modernizr JS -->
@@ -69,16 +72,14 @@
                                 <ul>
                                     <li><a href="/jsp/index.jsp">Домой</a></li>
                                     <li><a href="/maindoctors">Врачи</a></li>
-                                    <li><a href="/jsp/aboutUs.jsp">О нас</a></li>
+                                    <li class="active"><li><a href="/jsp/aboutUs.jsp">О нас</a></li>
                                     <li><a href="/jsp/contact.jsp">Контакты</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="navbar-right">
                             <div class="menu-1">
-                                <ul>
-                                    <li class="active"><a href="/edit">Личный кабинет</a></li>
-                                </ul>
+                                <ul><li><a href="/edit">Личный кабинет</a> </li></ul>
                             </div>
                         </div>
                     </div>
@@ -87,68 +88,48 @@
         </div>
     </nav>
 
-    <div id="colorlib-contact">
+    <div id="colorlib-about">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 animate-box">
-                    <div class="row profile">
-                        <div class="col-md-4">
-
-                            <div class="profile-sidebar">
-
-                                <div class="profile-userpic">
-                                    <img src="../../resources/images/c88b0d8b253a0fc6abad472107baa3fa.jpg"
-                                         class="img-responsive" alt="">
+<!--                <div class="col-md-6 col-md-push-6 animate-box">-->
+<!--                    <img class="img-responsive about-img" src="images/about.png" alt="">-->
+<!--                </div>-->
+                <div class="col-md-12  animate-box">
+                    <h2>О нас</h2>
+                    <p>
+                        MedClinic – частная клиника № 1 по оказанию высокотехнологичной помощи. Мы располагаем необходимым оборудованием для проведения комплексной диагностики при любом заболевании.  Мы применяем самые современные медицинские технологии: молекулярную визуализацию, роботизированную хирургию, новейшие методы лучевой терапии и радиохирургии, ангиографическую систему последнего поколения для выполнения эндоваскулярных операций.
+                    </p>
+                    <div class="fancy-collapse-panel">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Наша миссия
+                                        </a>
+                                    </h4>
                                 </div>
-
-                                <div class="profile-usertitle">
-                                    <div class="profile-usertitle-name">
-                                        ${firstName} ${lastName}
-                                    </div>
-                                </div>
-
-                                <div class="profile-usermenu">
-                                    <ul class="nav">
-                                        <li>
-                                            <a href="/edit">Профиль</a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="/doctors">Записаться</a>
-                                        </li>
-                                        <li>
-                                            <a href="/visit">Мои записи</a>
-                                        </li>
-                                        <li>
-                                            <a href="/logout">Выйти</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container col-md-8">
-                            <div class="col-md-12 animate-box">
-                                <div class="row">
-                                    <c:forEach items="${doctors}" var="doctor">
-                                        <div class="col-md-4  text-center">
-
-                                            <div class="doctor">
-                                                <div class="desc">
-                                                    <span><c:out value="${doctor.speciality}"/></span>
-                                                    <h3><c:out
-                                                            value="${doctor.firstName}"/><br><c:out
-                                                            value="${doctor.lastName}"/></h3>
-                                                </div>
-                                                <div class="form-group text-center">
-                                                    <form action="/doctors" method="post">
-                                                        <button type="submit" class="btn-primary btn" name="doctorId"
-                                                                value="${doctor.id}">Записаться
-                                                        </button>
-                                                    </form>
-                                                        <%--<a href="#" class="btn-primary btn" value="${doctor.id}">Записаться</a>--%>
-                                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p> MedClinic – территория здоровья, где каждый пациент получает индивидуальный комплексный подход и доступ к лучшим мировым медицинским технологиям </p>
                                             </div>
                                         </div>
-                                    </c:forEach>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Почему мы?
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <p>Современные методы обследования и диагностики, передовое техническое оснащение, высокотехнологичное оборудование</p>
+                                        <p>Безупречная вежливость и внимательность персонала, сервис высочайшего уровня</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -185,12 +166,8 @@
 <script src="../../resources/js/magnific-popup-options.js"></script>
 <!-- Sticky Kit -->
 <script src="../../resources/js/sticky-kit.min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-<script src="../../resources/js/google_map.js"></script>
 <!-- Main -->
 <script src="../../resources/js/main.js"></script>
 
 </body>
 </html>
-

@@ -24,7 +24,11 @@
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="../../resources/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../resources/css/owl.theme.default.min.css">
-
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="../../resources/css/flexslider.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="../../resources/fonts/flaticon/font/flaticon.css">
+    <!-- Theme style  -->
     <link rel="stylesheet" href="../../resources/css/style.css">
 
     <!-- Modernizr JS -->
@@ -37,6 +41,7 @@
 </head>
 <body>
 
+
 <div class="colorlib-loader"></div>
 
 <div id="page">
@@ -48,7 +53,7 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="/jsp/index.jsp">Med<span>Clinic</span></a></div>
+                                    <div id="colorlib-logo"><a href="index.jsp">Med<span>Clinic</span></a></div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="num">
@@ -67,17 +72,17 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li><a href="/jsp/index.jsp">Домой</a></li>
-                                    <li><a href="/maindoctors">Врачи</a></li>
-                                    <li><a href="/jsp/aboutUs.jsp">О нас</a></li>
-                                    <li><a href="/jsp/contact.jsp">Контакты</a></li>
+                                    <li><a href="index.jsp">Домой</a></li>
+                                    <li class="active"><a href="/maindoctors">Врачи</a></li>
+                                    <li><a href="aboutUs.jsp">О нас</a></li>
+                                    <li><a href="contact.jsp">Контакты</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="navbar-right">
                             <div class="menu-1">
                                 <ul>
-                                    <li class="active"><a href="/edit">Личный кабинет</a></li>
+                                    <li><a href="/edit">Личный кабинет</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -87,77 +92,32 @@
         </div>
     </nav>
 
-    <div id="colorlib-contact">
+    <div class="colorlib-doctor">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 animate-box">
-                    <div class="row profile">
-                        <div class="col-md-4">
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+                    <h2>Наши Врачи</h2>
+                </div>
+            </div>
 
-                            <div class="profile-sidebar">
-
-                                <div class="profile-userpic">
-                                    <img src="../../resources/images/c88b0d8b253a0fc6abad472107baa3fa.jpg"
-                                         class="img-responsive" alt="">
-                                </div>
-
-                                <div class="profile-usertitle">
-                                    <div class="profile-usertitle-name">
-                                        ${firstName} ${lastName}
-                                    </div>
-                                </div>
-
-                                <div class="profile-usermenu">
-                                    <ul class="nav">
-                                        <li>
-                                            <a href="/edit">Профиль</a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="/doctors">Записаться</a>
-                                        </li>
-                                        <li>
-                                            <a href="/visit">Мои записи</a>
-                                        </li>
-                                        <li>
-                                            <a href="/logout">Выйти</a>
-                                        </li>
-                                    </ul>
+            <div class="col-md-12 animate-box">
+                <div class="row">
+                    <c:forEach items="${doctors1}" var="doctor">
+                        <div class="col-md-3 col-sm-6 col-xs-12 animate-box text-center">
+                            <div class="doctor">
+                                <div class="desc">
+                                    <span><c:out value="${doctor.speciality}"></c:out></span>
+                                    <h3><c:out value="${doctor.firstName}"/> <c:out
+                                            value="${doctor.lastName}"/></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="container col-md-8">
-                            <div class="col-md-12 animate-box">
-                                <div class="row">
-                                    <c:forEach items="${doctors}" var="doctor">
-                                        <div class="col-md-4  text-center">
-
-                                            <div class="doctor">
-                                                <div class="desc">
-                                                    <span><c:out value="${doctor.speciality}"/></span>
-                                                    <h3><c:out
-                                                            value="${doctor.firstName}"/><br><c:out
-                                                            value="${doctor.lastName}"/></h3>
-                                                </div>
-                                                <div class="form-group text-center">
-                                                    <form action="/doctors" method="post">
-                                                        <button type="submit" class="btn-primary btn" name="doctorId"
-                                                                value="${doctor.id}">Записаться
-                                                        </button>
-                                                    </form>
-                                                        <%--<a href="#" class="btn-primary btn" value="${doctor.id}">Записаться</a>--%>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </c:forEach>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 </div>
 
 <div class="gototop js-top">
@@ -185,12 +145,8 @@
 <script src="../../resources/js/magnific-popup-options.js"></script>
 <!-- Sticky Kit -->
 <script src="../../resources/js/sticky-kit.min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-<script src="../../resources/js/google_map.js"></script>
 <!-- Main -->
 <script src="../../resources/js/main.js"></script>
 
 </body>
 </html>
-

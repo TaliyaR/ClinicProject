@@ -1,5 +1,6 @@
 package servlets;
 
+import controller.DoctorsController;
 import models.Doctor;
 import services.CommentService;
 import services.DoctorsService;
@@ -7,7 +8,6 @@ import services.EnrollService;
 import services.UserService;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,14 +16,13 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
 
-//@WebServlet(name = "DoctorsServlet", urlPatterns = "/doctors")
 public class DoctorsServlet extends HttpServlet {
     DoctorsService service = new DoctorsService();
     EnrollService enrollService = new EnrollService();
     CommentService commentService = new CommentService();
     UserService userService = new UserService();
+    DoctorsController doctorsController = new DoctorsController();
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,13 +39,7 @@ public class DoctorsServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        LinkedList<Doctor> doctorList = null;
-        try {
-            doctorList = service.getDoctorsList();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        request.setAttribute("doctors", doctorList);
+        request.setAttribute("doctors", doctorsController.getDoctorsList());
         request.getRequestDispatcher("/jsp/doctors.jsp").forward(request, response);
 
     }

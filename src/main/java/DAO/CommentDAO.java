@@ -10,7 +10,7 @@ public class CommentDAO {
     public CommentDAO(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3307", "root", "200499");
+            this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3307?useUnicode=yes&characterEncoding=UTF-8", "root", "200499");
         } catch (SQLException | ClassNotFoundException e) {
             throw new IllegalArgumentException();
         }

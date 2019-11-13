@@ -1,6 +1,7 @@
 package services;
 
 import DAO.EnrollDAO;
+import models.Enroll;
 import models.EnrollDate;
 
 import java.sql.*;
@@ -20,4 +21,9 @@ public class EnrollService {
     public LinkedList<EnrollDate> getFreeEnrolls(Integer id) {
         return dao.getFreeEnrolls(id);
     }
+
+    public LinkedList<Enroll> getUsersEnroll(Integer id){
+        return dao.getUserEnrolls(id);
+    }
+
 }

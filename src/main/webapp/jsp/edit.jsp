@@ -1,196 +1,210 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 28.10.2019
-  Time: 13:06
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MedClinic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
 
-    <title>User</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../../resources/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../../resources/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../../resources/css/bootstrap.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../../resources/css/magnific-popup.css">
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="../../resources/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../resources/css/owl.theme.default.min.css">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../resources/css/style.css">
 
-    <!-- Custom styles for this template -->
-    <link href="../../resources/css/user.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../resources/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../resources/js/ie-emulation-modes-warning.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <script src="../../resources/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="../../resources/js/respond.min.js"></script>
     <![endif]-->
-</head>
 
+</head>
 <body>
 
-<div class="container">
-    <!-- Static navbar -->
-    <nav class="navbar navbar-light navbar-default" style="background-color: #70c6b6">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">MedClinic</a>
+<div class="colorlib-loader"></div>
+
+<div id="page">
+    <nav class="colorlib-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="colorlib-logo"><a href="/jsp/index.jsp">Med<span>Clinic</span></a></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="num">
+                                        <span class="icon"><i class="icon-phone"></i></span>
+                                        <p><a href="#">8-800-555-35-35</a><br><a href="#">8-800-555-35-35</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">УСЛУГИ</a></li>
-                    <li><a href="#">ВРАЧИ</a></li>
-                    <li><a href="#">O НАС</a></li>
-                    <li><a href="#">КОНТАКТЫ</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">ЛИЧНЫЙ КАБИНЕТ<span class="sr-only">(current)</span></a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+            <div class="menu-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="menu-1">
+                                <ul>
+                                    <li><a href="/jsp/index.jsp">Домой</a></li>
+                                    <li><a href="/maindoctors">Врачи</a></li>
+                                    <li><a href="/jsp/aboutUs.jsp">О нас</a></li>
+                                    <li><a href="/jsp/contact.jsp">Контакты</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navbar-right">
+                            <div class="menu-1">
+                                <ul><li class="active"><a href="/edit">Личный кабинет</a> </li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
-</div>
+    <div id="colorlib-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 animate-box">
+                    <div class="row profile">
+                        <div class="col-md-4">
 
+                            <div class="profile-sidebar">
 
-<div class="container">
-    <div class="row profile">
-        <div class="col-md-3">
-            <div class="profile-sidebar">
-                <!-- SIDEBAR USERPIC -->
-                <div class="profile-userpic">
-                    <img src="../../resources/img/c88b0d8b253a0fc6abad472107baa3fa.jpg" class="img-responsive" alt="">
-                </div>
+                                <div class="profile-userpic">
+                                    <img src="../../resources/images/c88b0d8b253a0fc6abad472107baa3fa.jpg" class="img-responsive" alt="">
+                                </div>
 
-                <div class="profile-usertitle">
-                    <div class="profile-usertitle-name">
-                        ${firstName} ${lastName}
+                                <div class="profile-usertitle">
+                                    <div class="profile-usertitle-name">
+                                        ${firstName} ${lastName}
+                                    </div>
+                                </div>
+
+                                <div class="profile-usermenu">
+                                    <ul class="nav">
+                                        <li class="active">
+                                            <a href="/edit">Профиль</a>
+                                        </li>
+                                        <li>
+                                            <a href="/doctors">Записаться</a>
+                                        </li>
+                                        <li>
+                                            <a href="/visit">Мои записи</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Выйти</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Персональные данные</h2>
+                            <form action="/edit" method="post">
+                                <div class="row form-group">
+                                    <div class="col-md-6">
+                                        <label for="fname">Имя</label>
+                                        <input type="text" id="fname" name="firstName" class="form-control mb" value="${firstName}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lname">Фамилия</label>
+                                        <input type="text" id="lname" name="lastName" class="form-control" value="${lastName}" >
+                                    </div>
+                                </div>
 
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li>
-                            <a href="#">
-                                <i class="glyphicon glyphicon-home"></i>
-                                Профиль </a>
-                        </li>
-                        <li class="active">
-                            <a href="#">
-                                <i class="glyphicon glyphicon-user"></i>
-                                Редактирование профиля </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="glyphicon glyphicon-ok"></i>
-                                Здоровье </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="glyphicon glyphicon-flag"></i>
-                                Помощь </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END MENU -->
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="profile-content">
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                    <label for="birthDate">Дата Рождения</label>
+                                        <input type="date" id="birthDate" name="birthDate" class="form-control" value="${birthDate}">
+                                    </div>
+                                </div>
 
-                <div class="container">
-                    <!-- edit form column -->
-                    <div class="col-md-9 personal-info">
-                        <%--<div class="alert alert-info alert-dismissable">--%>
-                            <%--<a class="panel-close close" data-dismiss="alert">×</a>--%>
-                            <%--<i class="fa fa-coffee"></i>--%>
-                            <%--This is an <strong>.alert</strong>. Use this to show important messages to the user.--%>
-                        <%--</div>--%>
-                        <h3> Персональные данные</h3>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" class="form-control" value="${email}">
+                                    </div>
+                                </div>
 
-                        <form class="form-horizontal" role="form" action="/edit" method="post">
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Имя</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="firstName" value="${firstName}">
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                    <label for="phone">Телефон</label>
+                                        <input class="form-control" id="phone" type="text" name="phone" value="${phone}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Фамилия</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="lastName" value="${lastName}">
+
+                                <%--<p class="btn-big">--%>
+                                <div class="row form-group text-center">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-primary" value="Сохранить">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Дата Рождения</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="date" name="birthDate" value="${birthDate}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Email:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="email" name="email" value="${email}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Телефон</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="phone" value="${phone}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label"></label>
-                                <div class="col-md-8">
-                                    <input type="submit" class="btn btn-success" value="Сохранить">
-                                    <input type="reset" class="btn btn-danger" value="Закрыть">
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr>
         </div>
     </div>
+    </div>
+
 </div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
-<!--<center>-->
-<!--  <strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>-->
-<!--</center>-->
-<br>
-<br>
 
-
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../resources/js/jquery.min.js"><\/script>')</script>
+<!-- jQuery -->
+<script src="../../resources/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="../../resources/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
 <script src="../../resources/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../resources/js/ie10-viewport-bug-workaround.js"></script>
+<!-- Waypoints -->
+<script src="../../resources/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="../../resources/js/jquery.stellar.min.js"></script>
+<!-- Carousel -->
+<script src="../../resources/js/owl.carousel.min.js"></script>
+<!-- Flexslider -->
+<script src="../../resources/js/jquery.flexslider-min.js"></script>
+<!-- countTo -->
+<script src="../../resources/js/jquery.countTo.js"></script>
+<!-- Magnific Popup -->
+<script src="../../resources/js/jquery.magnific-popup.min.js"></script>
+<script src="../../resources/js/magnific-popup-options.js"></script>
+<!-- Sticky Kit -->
+<script src="../../resources/js/sticky-kit.min.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+<script src="../../resources/js/google_map.js"></script>
+<!-- Main -->
+<script src="../../resources/js/main.js"></script>
+
 </body>
 </html>
+

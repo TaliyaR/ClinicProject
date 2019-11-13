@@ -36,14 +36,13 @@ public class UserDAO {
 
     public void save(User user){
         try {
-            PreparedStatement statement = connection.prepareStatement(  "INSERT INTO project_schema.user (first_name, " +
-                    "last_name, email, phone, password, birth_date) VALUES (?, ?, ?, ?, ?, ?)");
+            PreparedStatement statement = connection.prepareStatement(  "INSERT INTO project_schema.user (first_name, last_name, email, phone, password, birth_date) VALUES (?, ?, ?, ?, ?, ?)");
             statement.setString(1, user.getFirstName());
             statement.setString(2, user.getLastName());
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getPhone());
             statement.setString(5, user.getPassword());
-            statement.setDate(6, (java.sql.Date)user.getBirthDate());
+            statement.setDate(6, user.getBirthDate());
 
             int row = statement.executeUpdate();
             if(row == 0){
@@ -56,8 +55,7 @@ public class UserDAO {
 
     public void updateUser(Integer id, String firstName, String lastName, String email, String phone, Date birthDate){
         try {
-            PreparedStatement statement = connection.prepareStatement("UPDATE project_schema.user SET first_name = ?, " +
-                    "last_name = ?, email = ?, phone = ?, birth_date = ? WHERE user_id = ?");
+            PreparedStatement statement = connection.prepareStatement("UPDATE project_schema.user SET first_name = ?, last_name = ?, email = ?, phone = ?, birth_date = ? WHERE user_id = ?");
             statement.setString(1, firstName);
             statement.setString(2, lastName);
             statement.setString(3, email);

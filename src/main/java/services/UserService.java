@@ -12,14 +12,6 @@ public class UserService {
         this.dao = new UserDAO();
     }
 
-    //    public String getPasswordByEmail(String email){
-//        User user = dao.getUserByEmail(email);
-//        if (user != null) {
-//            return user.getPassword();
-//        } else {
-//            return null;
-//        }
-//    }
 
     public Integer getUserIdByEmail(String email) {
         return dao.getUserByEmail(email).getId();

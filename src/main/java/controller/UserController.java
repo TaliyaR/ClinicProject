@@ -24,7 +24,7 @@ public class UserController {
                 }
                 req.getSession().setAttribute("current_user", email);
 
-                resp.sendRedirect("/home");
+                resp.sendRedirect("/edit");
             }
         } catch (IOException e) {
             e.printStackTrace();

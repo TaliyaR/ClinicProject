@@ -6,12 +6,11 @@ import models.EnrollDate;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 import java.util.Date;
 
 public class EnrollDAO {
     Connection connection;
+
     {
         try {
             this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3307", "root", "200499");
@@ -34,6 +33,33 @@ public class EnrollDAO {
             throw new IllegalArgumentException();
         }
     }
+
+    public LinkedList<Enroll> getUserEnrolls(Integer userId) {
+        try {
+            return getUserEnrolls0(userId);
+        } catch (SQLException e) {
+            throw new IllegalArgumentException();
+        }
+
+    }
+
+    private LinkedList<Enroll> getUserEnrolls0(Integer userId) throws SQLException {
+        LinkedList<Enroll> enrolls = new LinkedList<>();
+        ResultSet resultSet;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM project_schema.enroll WHERE user_id = ?");
+            statement.setInt(1, userId);
+            resultSet = statement.executeQuery();
+        } catch (SQLException e) {
+            throw new IllegalArgumentException();
+        }
+        while (resultSet.next()) {
+            enrolls.add(new Enroll(resultSet.getInt("doctor_id"), resultSet.getInt("user_id"), resultSet.getDate("date"), resultSet.getString("time")));
+        }
+        return enrolls;
+
+    }
+
     public LinkedList<Enroll> getDoctorEnrolls(Integer doctorId, String date) {
         try {
             return getDoctorEnrolls0(doctorId, date);
@@ -44,7 +70,7 @@ public class EnrollDAO {
     }
 
 
-    public LinkedList<Enroll> getDoctorEnrolls0(Integer doctorId, String date) throws SQLException {
+    private LinkedList<Enroll> getDoctorEnrolls0(Integer doctorId, String date) throws SQLException {
         LinkedList<Enroll> enrolls = new LinkedList<>();
         ResultSet resultSet;
         try {
