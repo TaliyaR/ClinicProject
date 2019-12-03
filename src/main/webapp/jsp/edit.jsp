@@ -49,12 +49,6 @@
                                 <div class="col-md-6">
                                     <div id="colorlib-logo"><a href="/jsp/index.jsp">Med<span>Clinic</span></a></div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="num">
-                                        <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">8-800-555-35-35</a><br><a href="#">8-800-555-35-35</a></p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,10 +87,6 @@
 
                             <div class="profile-sidebar">
 
-                                <div class="profile-userpic">
-                                    <img src="../../resources/images/c88b0d8b253a0fc6abad472107baa3fa.jpg" class="img-responsive" alt="">
-                                </div>
-
                                 <div class="profile-usertitle">
                                     <div class="profile-usertitle-name">
                                         ${firstName} ${lastName}
@@ -124,22 +114,25 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h2>Персональные данные</h2>
-                            <form action="/edit" method="post">
+                            <form action="/edit" method="post"name="profile" onsubmit="return validation();">
                                 <div class="row form-group">
                                     <div class="col-md-6">
                                         <label for="fname">Имя</label>
                                         <input type="text" id="fname" name="firstName" class="form-control mb" value="${firstName}">
+                                        <span id="check" aria-required="true"></span>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="lname">Фамилия</label>
                                         <input type="text" id="lname" name="lastName" class="form-control" value="${lastName}" >
+                                        <span id="check2" aria-required="true"></span>
                                     </div>
                                 </div>
 
                                 <div class="row form-group">
                                     <div class="col-md-12">
-                                    <label for="birthDate">Дата Рождения</label>
+                                        <label for="birthDate">Дата Рождения</label>
                                         <input type="date" id="birthDate" name="birthDate" class="form-control" value="${birthDate}">
+                                        <span id="checkDate" aria-required="true"></span>
                                     </div>
                                 </div>
 
@@ -147,23 +140,63 @@
                                     <div class="col-md-12">
                                         <label for="email">Email</label>
                                         <input type="email" id="email" name="email" class="form-control" value="${email}">
+                                        <span id="checkEmail" aria-required="true"></span>
                                     </div>
                                 </div>
 
                                 <div class="row form-group">
                                     <div class="col-md-12">
-                                    <label for="phone">Телефон</label>
+                                        <label for="phone">Телефон</label>
                                         <input class="form-control" id="phone" type="text" name="phone" value="${phone}">
+                                        <span id="checkPhone" aria-required="true"></span>
                                     </div>
                                 </div>
 
-                                <%--<p class="btn-big">--%>
                                 <div class="row form-group text-center">
                                     <div class="col-md-12">
                                         <input type="submit" class="btn btn-primary" value="Сохранить">
                                     </div>
                                 </div>
                             </form>
+                                <%--<div class="row form-group">--%>
+                                    <%--<div class="col-md-6">--%>
+                                        <%--<label for="fname">Имя</label>--%>
+                                        <%--<input type="text" id="fname" name="firstName" class="form-control mb" value="${firstName}">--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-6">--%>
+                                        <%--<label for="lname">Фамилия</label>--%>
+                                        <%--<input type="text" id="lname" name="lastName" class="form-control" value="${lastName}" >--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+
+                                <%--<div class="row form-group">--%>
+                                    <%--<div class="col-md-12">--%>
+                                    <%--<label for="birthDate">Дата Рождения</label>--%>
+                                        <%--<input type="date" id="birthDate" name="birthDate" class="form-control" value="${birthDate}">--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+
+                                <%--<div class="row form-group">--%>
+                                    <%--<div class="col-md-12">--%>
+                                        <%--<label for="email">Email</label>--%>
+                                        <%--<input type="email" id="email" name="email" class="form-control" value="${email}">--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+
+                                <%--<div class="row form-group">--%>
+                                    <%--<div class="col-md-12">--%>
+                                    <%--<label for="phone">Телефон</label>--%>
+                                        <%--<input class="form-control" id="phone" type="text" name="phone" value="${phone}">--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+
+                                <%--&lt;%&ndash;<p class="btn-big">&ndash;%&gt;--%>
+                                <%--<div class="row form-group text-center">--%>
+                                    <%--<div class="col-md-12">--%>
+                                        <%--<input type="submit" class="btn btn-primary" value="Сохранить">--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</form>--%>
                         </div>
                     </div>
                 </div>
@@ -173,11 +206,86 @@
     </div>
 
 </div>
+<script>
+    function validation() {
+        let lName = document.profile.lastName;
+        let fName = document.profile.firstName;
+        let date = document.profile.birthDate;
+        let email = document.profile.email;
+        let phone = document.profile.phone;
 
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
+        if (user_name(lName, 30)) {
+            if(name(fName, 30)){
+                if (validDate(date)){
+                    if (validEmail(email)) {
+                        if (validPhone(phone, 10)){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
 
+    }
+    function user_name(uName, max) {
+        let len = uName.value.length;
+        let letters = /^[A-Za-zА-Яа-я]+$/;
+        if (len == 0) {
+            document.getElementById('check2').innerHTML = 'Пожалуйста, введите данные';
+            return false;
+        }else if (!uName.value.match(letters)){
+            document.getElementById('check2').innerHTML = 'Фамилия должна содержать только буквы';
+        } else if (len > max) {
+            document.getElementById('check2').innerHTML = 'Число символов не должен быть больше ' + max;
+            return false;
+        }
+        return true;
+    }
+
+    function name(uName, min, max) {
+        let len = uName.value.length;
+        let letters = /^[A-Za-zА-Яа-я]+$/;
+        if (len == 0) {
+            document.getElementById('check').innerHTML = 'Пожалуйста, введите данные';
+            return false;
+        } else if (len > max) {
+            document.getElementById('check').innerHTML = 'Число символов не должен быть больше ' + max;
+            return false;
+        } else if (!uName.value.match(letters)){
+            document.getElementById('check').innerHTML = 'Имя должно содержать только буквы';
+        }
+        return true;
+    }
+
+    function validEmail(email) {
+// let m = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        let m = /.+@.+\..+/;
+        if (!email.value.match(m)) {
+            document.getElementById('checkEmail').innerHTML = 'Пожалуйста, введите корректный адрес почты';
+            return false;
+        }
+        return true;
+    }
+
+    function validDate(dateBirth) {
+        var arr = dateBirth.value.split('-');
+        var date = new Date();
+        if ( arr[0] > (date.getFullYear() - 1) || arr[0] < 1900) {
+            document.getElementById('checkDate').innerHTML = 'Неверная дата';
+            return false;
+        }
+        return true;
+    }
+
+    function validPhone(phone, len) {
+        if (phone.value.length !== len){
+            document.getElementById('checkPhone').innerHTML = 'Номер телефона должен быть в формате xxx-xxx-xx-xx';
+            return false;
+        }
+        return true;
+    }
+</script>
 <!-- jQuery -->
 <script src="../../resources/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
@@ -188,10 +296,6 @@
 <script src="../../resources/js/jquery.waypoints.min.js"></script>
 <!-- Stellar Parallax -->
 <script src="../../resources/js/jquery.stellar.min.js"></script>
-<!-- Carousel -->
-<script src="../../resources/js/owl.carousel.min.js"></script>
-<!-- Flexslider -->
-<script src="../../resources/js/jquery.flexslider-min.js"></script>
 <!-- countTo -->
 <script src="../../resources/js/jquery.countTo.js"></script>
 <!-- Magnific Popup -->
@@ -199,9 +303,6 @@
 <script src="../../resources/js/magnific-popup-options.js"></script>
 <!-- Sticky Kit -->
 <script src="../../resources/js/sticky-kit.min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-<script src="../../resources/js/google_map.js"></script>
 <!-- Main -->
 <script src="../../resources/js/main.js"></script>
 

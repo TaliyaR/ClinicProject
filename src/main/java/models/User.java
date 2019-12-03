@@ -13,8 +13,9 @@ public class User implements Serializable {
     private String phone;
     private String password;
     private Date birthDate;
+    private String role;
 
-    public User(int id, String firstName, String lastName, String email, String phone, String password, Date birthDate) {
+    public User(int id, String firstName, String lastName, String email, String phone, String password, Date birthDate, String role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,6 +23,7 @@ public class User implements Serializable {
         this.phone = phone;
         this.password = password;
         this.birthDate = birthDate;
+        this.role = role;
     }
 
     public User(int id, String firstName, String lastName, String email, String phone, Date birthDate) {
@@ -33,13 +35,14 @@ public class User implements Serializable {
         this.birthDate = birthDate;
     }
 
-    public User(String firstName, String lastName, String email, String phone, String password, Date birthDate) {
+    public User(String firstName, String lastName, String email, String phone, String password, Date birthDate, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.password = password;
         this.birthDate = birthDate;
+        this.role = role;
     }
 
     public int getId() {
@@ -94,5 +97,12 @@ public class User implements Serializable {
         this.birthDate = birthDate;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
 

@@ -29,6 +29,7 @@ public class DoctorsServlet extends HttpServlet {
         if (request.getParameter("send") != null) {
             commentService.saveComment(userService.getUserIdByEmail((String) request.getSession().getAttribute("current_user")), Integer.parseInt(request.getParameter("doctorId")), userService.getUserFirstNameByEmail((String) request.getSession().getAttribute("current_user")), request.getParameter("comment"), new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         }
+
         Doctor doctor = service.getDoctorById(Integer.parseInt(request.getParameter("doctorId")));
         request.setAttribute("doctor", doctor);
         request.setAttribute("freeEnrolls", enrollService.getFreeEnrolls(Integer.parseInt(request.getParameter("doctorId"))));
@@ -40,6 +41,8 @@ public class DoctorsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("doctors", doctorsController.getDoctorsList());
+        String role = userService.getRoleByEmail((String) request.getSession().getAttribute("current_user"));
+        request.setAttribute("role", role);
         request.getRequestDispatcher("/jsp/doctors.jsp").forward(request, response);
 
     }

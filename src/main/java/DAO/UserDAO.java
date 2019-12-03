@@ -26,7 +26,7 @@ public class UserDAO {
                 return new User(resultSet.getInt("user_id"),resultSet.getString("first_name"),
                         resultSet.getString("last_name"), resultSet.getString("email"),
                         resultSet.getString("phone"), resultSet.getString("password"),
-                        resultSet.getDate("birth_date"));
+                        resultSet.getDate("birth_date"), resultSet.getString("role"));
             }
         }catch (SQLException e){
             throw new IllegalArgumentException();
@@ -36,13 +36,14 @@ public class UserDAO {
 
     public void save(User user){
         try {
-            PreparedStatement statement = connection.prepareStatement(  "INSERT INTO project_schema.user (first_name, last_name, email, phone, password, birth_date) VALUES (?, ?, ?, ?, ?, ?)");
+            PreparedStatement statement = connection.prepareStatement(  "INSERT INTO project_schema.user (first_name, last_name, email, phone, password, birth_date, role) VALUES (?, ?, ?, ?, ?, ?, ?)");
             statement.setString(1, user.getFirstName());
             statement.setString(2, user.getLastName());
             statement.setString(3, user.getEmail());
             statement.setString(4, user.getPhone());
             statement.setString(5, user.getPassword());
             statement.setDate(6, user.getBirthDate());
+            statement.setString(7, user.getRole());
 
             int row = statement.executeUpdate();
             if(row == 0){

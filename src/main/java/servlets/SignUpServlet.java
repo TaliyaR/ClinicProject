@@ -1,5 +1,6 @@
 package servlets;
 
+import controller.UserController;
 import models.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import services.UserService;
@@ -13,6 +14,7 @@ import java.sql.*;
 
 public class SignUpServlet extends HttpServlet {
     UserService userService = new UserService();
+    UserController userController = new UserController();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String firstName = request.getParameter("firstName");
@@ -22,12 +24,10 @@ public class SignUpServlet extends HttpServlet {
         String password = request.getParameter("password");
         String birthDate = request.getParameter("birthDate");
 
-        Date date = Date.valueOf(birthDate);
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        password = encoder.encode(password);
-        User newUser = new User(firstName, lastName, email, phone, password, date);
-        userService.signUp(newUser);
-        response.sendRedirect("/login");
+        if(!userController.registerUser(firstName, lastName, email, phone, password, birthDate, request, response)){
+            request.setAttribute("regInfo", "Данный email уже занят");
+            doGet(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

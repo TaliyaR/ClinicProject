@@ -13,6 +13,12 @@ public class Doctor {
         this.speciality = speciality;
     }
 
+    public Doctor(String firstName, String lastName, String speciality) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.speciality = speciality;
+    }
+
     public long getId() {
         return id;
     }

@@ -36,4 +36,17 @@ public class DoctorDAO {
             throw new IllegalArgumentException();
         }
     }
+
+    public void add(Doctor doctor){
+        try {
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO project_schema.doctor(first_name, last_name, speciality) VALUES (?, ?, ?)");
+            statement.setString(1, doctor.getFirstName());
+            statement.setString(2, doctor.getLastName());
+            statement.setString(3, doctor.getSpeciality());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

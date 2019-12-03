@@ -21,7 +21,10 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         String remember = req.getParameter("remember");
 
-        userController.loginUser(email, password, remember, req, resp);
+        if (!userController.loginUser(email, password, remember, req, resp)) {
+            req.setAttribute("info", "Неправильный пароль или email");
+            doGet(req, resp);
+        }
 
     }
 }

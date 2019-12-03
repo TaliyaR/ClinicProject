@@ -18,4 +18,9 @@ public class DoctorsController {
         }
         return doctorList;
     }
+
+    public void add(String firstName, String lastName, String speciality){
+        Doctor newDoctor = new Doctor(firstName, lastName, speciality);
+        doctorsService.add(newDoctor);
+    }
 }

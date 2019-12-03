@@ -22,8 +22,8 @@
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="../../resources/css/magnific-popup.css">
 	<!-- Owl Carousel  -->
-<!--	<link rel="stylesheet" href="css/owl.carousel.min.css">-->
-<!--	<link rel="stylesheet" href="css/owl.theme.default.min.css">-->
+	<%--<link rel="stylesheet" href="css/owl.carousel.min.css">--%>
+	<%--<link rel="stylesheet" href="css/owl.theme.default.min.css">--%>
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="../../resources/css/flexslider.css">
 	<!-- Flaticons  -->
@@ -53,12 +53,6 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div id="colorlib-logo"><a href="/jsp/index.jsp">Med<span>Clinic</span></a></div>
-								</div>
-								<div class="col-md-6">
-									<div class="num">
-										<span class="icon"><i class="icon-phone"></i></span>
-										<p><a href="#">8-800-555-35-35</a><br><a href="#">8-800-555-35-35</a></p>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -99,8 +93,6 @@
 			   			<div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>Ваше здоровье <strong>на первом <br>месте</strong></h1>
-<!--									<h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h2>-->
-<!--							<p><a class="btn btn-primary btn-lg btn-learn" href="#">Make an Appointment</a></p>-->
 						</div>
 			   			</div>
 			   		</div>
@@ -113,8 +105,6 @@
 			   			<div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>Мы поможем вам <strong>найти лучшего доктора</strong></h1>
-<!--									<h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h2>-->
-<!--									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Make an Appointment</a></p>-->
 			   				</div>
 			   			</div>
 			   		</div>
@@ -127,8 +117,6 @@
 			   			<div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>Гарантированно <strong>безопасная</strong> медицина</h1>
-<!--									<h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h2>-->
-<!--									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Make an Appointment</a></p>-->
 			   				</div>
 			   			</div>
 			   		</div>
@@ -151,14 +139,12 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="features animate-box">
-										<span class="icon text-center"><i class="flaticon-healthy-1"></i></span>
 										<div class="desc">
 											<h3>Квалифицированные доктора</h3>
 											<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
 										</div>
 									</div>
 									<div class="features animate-box">
-										<span class="icon text-center"><i class="flaticon-stethoscope"></i></span>
 										<div class="desc">
 											<h3>Бесплатная консультация</h3>
 											<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
@@ -167,14 +153,12 @@
 								</div>
 								<div class="col-md-6">
 									<div class="features animate-box">
-										<span class="icon text-center"><i class="flaticon-medical-1"></i></span>
 										<div class="desc">
 											<h3>Онлайн запись</h3>
 											<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
 										</div>
 									</div>
 									<div class="features animate-box">
-										<span class="icon text-center"><i class="flaticon-radiation"></i></span>
 										<div class="desc">
 											<h3>Современное оборудование</h3>
 											<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
@@ -190,10 +174,6 @@
 	</div>
 
 
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
 	<!-- jQuery -->

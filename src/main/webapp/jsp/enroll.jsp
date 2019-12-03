@@ -50,12 +50,6 @@
                                 <div class="col-md-6">
                                     <div id="colorlib-logo"><a href="/jsp/index.jsp">Med<span>Clinic</span></a></div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="num">
-                                        <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">8-800-555-35-35</a><br><a href="#">8-800-555-35-35</a></p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,10 +87,6 @@
                         <div class="col-md-4">
 
                             <div class="profile-sidebar">
-
-                                <div class="profile-userpic">
-                                    <img src="../../resources/images/c88b0d8b253a0fc6abad472107baa3fa.jpg" class="img-responsive" alt="">
-                                </div>
 
                                 <div class="profile-usertitle">
                                     <div class="profile-usertitle-name">
@@ -193,9 +183,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
 
 <!-- jQuery -->

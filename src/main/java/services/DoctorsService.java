@@ -45,4 +45,8 @@ public class DoctorsService {
             return null;
         }
     }
+
+    public void add(Doctor doctor){
+        dao.add(doctor);
+    }
 }

@@ -13,10 +13,10 @@ public class Main {
         UserService userService = new UserService();
         EnrollService enrollService = new EnrollService();
 
-        LinkedList<Enroll> linkedList = enrollService.getUsersEnroll(8);
-        for (Enroll enroll : linkedList) {
-            System.out.println(enroll.toString());
+        String role = userService.getRoleByEmail("adminTaliya@m.ru");
+        System.out.println(role);
 
-        }
+
     }
+
 }

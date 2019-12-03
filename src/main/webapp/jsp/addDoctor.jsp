@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -23,14 +24,9 @@
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="../../resources/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../../resources/css/owl.theme.default.min.css">
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="../../resources/css/flexslider.css">
-    <!-- Flaticons  -->
-    <link rel="stylesheet" href="../../resources/fonts/flaticon/font/flaticon.css">
-    <!-- Theme style  -->
+
     <link rel="stylesheet" href="../../resources/css/style.css">
 
-    <!-- Modernizr JS -->
     <script src="../../resources/js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
@@ -66,14 +62,14 @@
                                 <ul>
                                     <li><a href="/jsp/index.jsp">Домой</a></li>
                                     <li><a href="/maindoctors">Врачи</a></li>
-                                    <li class="active"><li><a href="/jsp/aboutUs.jsp">О нас</a></li>
+                                    <li><a href="/jsp/aboutUs.jsp">О нас</a></li>
                                     <li><a href="/jsp/contact.jsp">Контакты</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="navbar-right">
                             <div class="menu-1">
-                                <ul><li><a href="/edit">Личный кабинет</a> </li></ul>
+                                <ul><li class="active"><a href="/edit">Личный кабинет</a> </li></ul>
                             </div>
                         </div>
                     </div>
@@ -82,24 +78,71 @@
         </div>
     </nav>
 
-    <div id="colorlib-about">
+    <div id="colorlib-contact">
         <div class="container">
             <div class="row">
-<!--                <div class="col-md-6 col-md-push-6 animate-box">-->
-<!--                    <img class="img-responsive about-img" src="images/about.png" alt="">-->
-<!--                </div>-->
-                <div class="col-md-12  animate-box">
-                    <h2>О нас</h2>
-                    <p>
-                        MedClinic – частная клиника № 1 по оказанию высокотехнологичной помощи. Мы располагаем необходимым оборудованием для проведения комплексной диагностики при любом заболевании.  Мы применяем самые современные медицинские технологии: молекулярную визуализацию, роботизированную хирургию, новейшие методы лучевой терапии и радиохирургии, ангиографическую систему последнего поколения для выполнения эндоваскулярных операций.
-                    </p>
-                    <h2>Наша Миссия</h2>
-                    <p>
-                        MedClinic – территория здоровья, где каждый пациент получает индивидуальный комплексный подход и доступ к лучшим мировым медицинским технологиям
-                    </p>
-                    <h2>Почему мы?</h2>
-                    <p>Современные методы обследования и диагностики, передовое техническое оснащение, высокотехнологичное оборудование</p>
-                    <p>Безупречная вежливость и внимательность персонала, сервис высочайшего уровня</p>
+                <div class="col-md-12 animate-box">
+                    <div class="row profile">
+                        <div class="col-md-4">
+
+                            <div class="profile-sidebar">
+
+                                <div class="profile-usertitle">
+                                    <div class="profile-usertitle-name">
+                                        ${firstName} ${lastName}
+                                    </div>
+                                </div>
+
+                                <div class="profile-usermenu">
+                                    <ul class="nav">
+                                        <li class="active">
+                                            <a href="/edit">Профиль</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="/doctors">Записаться</a>
+                                        </li>
+                                        <li>
+                                            <a href="/visit">Мои записи</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Выйти</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Добавить врача</h2>
+                                <form action="/add-doc" method="post">
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <label for="fname">Имя</label>
+                                            <input type="text" id="fname" name="firstName" class="form-control mb" value="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lname">Фамилия</label>
+                                            <input type="text" id="lname" name="lastName" class="form-control" value="" >
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="email">Специальность</label>
+                                            <input type="text" id="email" name="speciality" class="form-control" value="">
+                                        </div>
+                                    </div>
+
+                                    <%--<p class="btn-big">--%>
+                                    <div class="row form-group text-center">
+                                        <div class="col-md-12">
+                                            <input type="submit" class="btn btn-primary" value="Сохранить">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,10 +160,6 @@
 <script src="../../resources/js/jquery.waypoints.min.js"></script>
 <!-- Stellar Parallax -->
 <script src="../../resources/js/jquery.stellar.min.js"></script>
-<!-- Carousel -->
-<script src="../../resources/js/owl.carousel.min.js"></script>
-<!-- Flexslider -->
-<script src="../../resources/js/jquery.flexslider-min.js"></script>
 <!-- countTo -->
 <script src="../../resources/js/jquery.countTo.js"></script>
 <!-- Magnific Popup -->
@@ -133,3 +172,4 @@
 
 </body>
 </html>
+

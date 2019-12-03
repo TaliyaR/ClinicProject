@@ -55,12 +55,6 @@
                                 <div class="col-md-6">
                                     <div id="colorlib-logo"><a href="index.jsp">Med<span>Clinic</span></a></div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="num">
-                                        <span class="icon"><i class="icon-phone"></i></span>
-                                        <p><a href="#">8-800-555-35-35</a><br><a href="#">8-800-555-35-35</a></p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -72,10 +66,10 @@
                         <div class="col-xs-8">
                             <div class="menu-1">
                                 <ul>
-                                    <li><a href="index.jsp">Домой</a></li>
+                                    <li><a href="/jsp/index.jsp">Домой</a></li>
                                     <li class="active"><a href="/maindoctors">Врачи</a></li>
-                                    <li><a href="aboutUs.jsp">О нас</a></li>
-                                    <li><a href="contact.jsp">Контакты</a></li>
+                                    <li><a href="/jsp/aboutUs.jsp">О нас</a></li>
+                                    <li><a href="/jsp/contact.jsp">Контакты</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -120,9 +114,6 @@
 </div>
 </div>
 
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
 
 <!-- jQuery -->
 <script src="../../resources/js/jquery.min.js"></script>
